@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Andoni Rodriguez Personal Site</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Andoni Rodriguez Personal Site" />
+    <meta name="robots" content="index,follow">
+    <!-- Open Graph Protocol Meta -->
+    <meta property='og:title' content='Andoni Rodriguez - Personal Site' />
+    <meta property='og:url' content='http://www.andonirodriguez.com' />
+    <meta property='og:image' content='http://www.andonirodriguez.com/static/img/home-bg.jpg' />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content='Andoni Rodriguez - Personal Site' />
+    <!-- END Open Graph Protocol Meta -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Andoni Rodriguez - Personal Site" />
+    <meta name="twitter:description" content="Andoni Rodriguez - Personal Site" />
+    <meta name="twitter:url" content="http://www.andonirodriguez.com" />
+    <meta name="twitter:image" content="http://www.andonirodriguez.com/static/img/home-bg.jpg" />
+    <!-- END Twitter Cards -->
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Analytics -->
+    <script src="/static/js/analyticstracking.js"></script>
+
+
+</head>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c797fd4414a2173ba89d1552d/dde80ea88a3aa58c45922e85d.js");</script>
+
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h2>Andoni Rodríguez</h2>
+                        <hr class="small">
+                        <span class="subheading">Articulos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Andoni Rodríguez</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/posts/">Articulos</a>
+                    </li>
+                    <li>
+                        <a href="/projects/">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="/contact/">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h1>DigitalOcean tutorial as Ansible Playbook</h1>
+                    <hr>
+                    <h2 class="subheading">Turning Ubuntu server DigitalOcean tutorial on ansible-playbook.</h2>
+                    <p><img class="img-responsive" src="/static/img/digitaloceanlogo.png" alt="DigitalOcean Logo"></p>
+<p><a href="https://www.digitalocean.com/"><strong>DigitalOcean</strong></a> has, in my opinion, the best tutorials of the moment, I visit this one a lot
+<a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04">Initial Server Setup with Ubuntu 16.04</a>,
+where they explain how to mount <strong>Ubuntu server</strong> in one of its <strong>droplets</strong>.</p>
+<blockquote>
+<p>DigitalOcean is a cloud infrastructure provider focused on simplifying web infrastructure for software developers.</p>
+<p>DigitalOcean calls its virtual servers, Droplets; each Droplet that you spin up is a new virtual server for your 
+personal use.</p>
+</blockquote>
+<p>I've visited that tutorial many times, so many, I have decided to make it into an <strong>ansible-playbook</strong> to have it automated 
+so that every time I want to launch a new droplet with Ubuntu I just have to run a command.</p>
+<p>The command I throw is as follows:</p>
+<p><code>$ ansible-playbook create_droplet.yml -vv</code></p>
+<p>And this is the playbook I use:</p>
+<pre>
+# DigitalOcean Playbook
+---
+- name: DigitalOcean
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+  - name: Include the variables for droplet creation
+    include_vars: group_vars/droplet
+
+  - name: Create Droplet
+    digital_ocean:
+      state: present
+      command: droplet
+      name: "{{ droplet_name }}"
+      api_token: "{{ digital_ocean_api_token }}"
+      size_id: "{{ droplet_size }}"
+      region_id: "{{ droplet_region }}"
+      image_id: "{{ droplet_image }}"
+      ssh_key_ids: "{{ droplet_ssh_key_id }}"
+      wait_timeout: 500
+    register: droplet_info
+
+
+  - name: Add new instance to host group
+    add_host: hostname={{ droplet_info.droplet.ip_address }} groupname=digital_ocean_droplet
+
+  - name: Wait for SSH to come up
+    wait_for: host={{ droplet_info.droplet.ip_address }} port=22 delay=10 timeout=60 state=started
+
+- name: Configure Ubuntu Droplet for user directives
+  hosts: digital_ocean_droplet
+  remote_user: root
+  gather_facts: False
+
+  pre_tasks:
+
+    - name: Install python2 necessary for Ansible
+      raw: sudo apt-get -y install python-simplejson
+
+  tasks:
+
+    - name: Create a user with sudo privileges
+      user:
+        name: dropletuser
+        state: present
+        shell: /bin/bash
+        groups: sudo
+
+    - name: Set authorized key with id_rsa.pub home file
+      authorized_key:
+        user: dropletuser
+        state: present
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+    - name: Allow run commands as root with dropletuser
+      shell: "echo '%sudo ALL=NOPASSWD: ALL' >> /etc/sudoers"
+
+
+- name: Configure Droplet
+  hosts: digital_ocean_droplet
+  remote_user: dropletuser
+  gather_facts: True
+
+  tasks:
+
+    - name: Install Vim package
+      sudo : yes
+      apt:
+        name: vim
+        state: present
+        update_cache: yes
+
+    - name: Install htop
+      sudo : yes
+      apt:
+        name: htop
+        state: present
+        update_cache: yes
+
+    - name: Enable OpenSSH
+      sudo: yes
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+</pre>
+
+<p>I'll explain each part of the playbook in detail:</p>
+<pre>
+  tasks:
+
+  - name: Include the variables for droplet creation
+    include_vars: group_vars/droplet
+
+  - name: Create Droplet
+    digital_ocean:
+      state: present
+      command: droplet
+      name: "{{ droplet_name }}"
+      api_token: "{{ digital_ocean_api_token }}"
+      size_id: "{{ droplet_size }}"
+      region_id: "{{ droplet_region }}"
+      image_id: "{{ droplet_image }}"
+      ssh_key_ids: "{{ droplet_ssh_key_id }}"
+      wait_timeout: 500
+    register: droplet_info
+
+
+  - name: Add new instance to host group
+    add_host: hostname={{ droplet_info.droplet.ip_address }} groupname=digital_ocean_droplet
+
+  - name: Wait for SSH to come up
+    wait_for: host={{ droplet_info.droplet.ip_address }} port=22 delay=10 timeout=60 state=started
+</pre>
+
+<p>In the first part of the playbook I read the variables that I will use from the external file '<strong>group_vars/droplet</strong>', 
+you'll have to see that it has:</p>
+<pre>
+droplet_region: ams2
+digital_ocean_api_token: <api_token_here>
+droplet_size: 512mb
+droplet_image: ubuntu-16-04-x64
+droplet_name: Ubuntu 16.04 Droplet
+droplet_ssh_key_id: <ssh_key_id_here>
+</pre>
+
+<p>'<strong>droplet_region</strong>', is the region in which we want to deploy the <strong>droplet</strong>, in this case in ams2 (Amsterdam 2), the list of 
+available regions is this:</p>
+<pre>
+"regions": ["ams1", "ams2", "ams3", "blr1", "fra1", "lon1", "nyc1", "nyc2", "nyc3", "sfo1", "sfo2", "sgp1", "tor1"]
+</pre>
+
+<p>'<strong>digital_ocean_api_token</strong>', is the <strong>Token API</strong> that we have to generate to be able to perform operations with <strong>DigitalOcean</strong>, 
+if you don't have one you can generate it in this url: <a href="https://cloud.digitalocean.com/settings/api/tokens">https://cloud.digitalocean.com/settings/api/tokens</a></p>
+<p>'<strong>droplet_size</strong>', is the type of <strong>droplet</strong> that we want to deploy, in this case I have chosen the option '<strong>512mb</strong>' because it's the
+cheapest one, the following link is all available: <a href="https://www.digitalocean.com/pricing/#droplet">https://www.digitalocean.com/pricing/#droplet</a></p>
+<p>The list of options for '<strong>droplet_size</strong>' is as follows:</p>
+<pre>
+"sizes": ["512mb", "1gb", "2gb", "4gb", "8gb", "16gb", "32gb", "48gb", "64gb"]
+</pre>
+
+<p>'<strong>droplet_image</strong>', refers to the base image that we are going to use for the <strong>droplet</strong>, because the <strong>DigitalOcean</strong> tutorial is from 
+<strong>Ubuntu 16.04</strong>, we'll use that.</p>
+<p>'<strong>droplet_name</strong>', is simply the name we want to give the <strong>droplet</strong>.</p>
+<p>'<strong>droplet_ssh_key_id</strong>', this is an important option, since we don't use any type of passwords, we need to have a key ssh 
+created in <strong>DigitalOcean</strong> (<a href="https://cloud.digitalocean.com/settings/security">https://cloud.digitalocean.com/settings/security</a>)
+and we also need to know its id. To know the id, I use this playbook:</p>
+<pre>
+# DigitalOcean Info Playbook
+---
+- name: DigitalOcean
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+  - name: Include variables
+    include_vars: group_vars/droplet
+
+  - name: Info ssh
+    digital_ocean:
+      state: present
+      command: ssh
+      name: .your name id here.
+      ssh_pub_key: 'ssh-rsa ... .pub key here.'
+      api_token: "{{ digital_ocean_api_token }}"
+</pre>
+
+<p>It is executed as follows:</p>
+<p><code>$ ansible-playbook info.yml -vv</code></p>
+<p>Later, with the module digital_ocean of ansible <a href="http://docs.ansible.com/ansible/digital_ocean_module.html">http://docs.ansible.com/ansible/digital_ocean_module.html</a>,
+I create the doplet, register the information in a variable '<strong>droplet_info</strong>', which I use later to connect to the host and
+to be able to configure it. I also check that the droplet is raised by checking if you have port 22 (SSH) listening.</p>
+<p>What comes next is the own configuration of the droplet according to the tutorial of <strong>DigitalOcean</strong>, lets go with it:</p>
+<pre>
+- name: Configure Ubuntu Droplet for user directives
+  hosts: digital_ocean_droplet
+  remote_user: root
+  gather_facts: False
+
+  pre_tasks:
+
+    - name: Install python2 necessary for Ansible
+      raw: sudo apt-get -y install python-simplejson
+
+  tasks:
+
+    - name: Create a user with sudo privileges
+      user:
+        name: dropletuser
+        state: present
+        shell: /bin/bash
+        groups: sudo
+
+    - name: Set authorized key with id_rsa.pub home file
+      authorized_key:
+        user: dropletuser
+        state: present
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+    - name: Allow run commands as root with dropletuser
+      shell: "echo '%sudo ALL=NOPASSWD: ALL' >> /etc/sudoers"
+</pre>
+
+<p>In the '<strong>pre_tasks</strong>' section, I installed pyhton2, since the Ansible version I use needs python2 and <strong>Ubuntu server 16.04</strong> 
+comes with python3 by default, I use the raw module for it <a href="http://docs.ansible.com/ansible/raw_module.html">http://docs.ansible.com/ansible/raw_module.html</a></p>
+<p>The next thing the tutorial does is create a new user, generate a ssh key, upload it and give it privileges to execute
+commands as root. I do it through the modules user, authorized_key, and adding a line in the file 'sudoers' so that it 
+does not ask me password when I do sudo.</p>
+<p>The part of the tutorial where it disables password is not necessary because its already done by default when creating the <strong>droplet</strong>
+without any type of passwords.</p>
+<p>The only thing left to do is to enable with the ufw module(<a href="http://docs.ansible.com/ansible/ufw_module.html">http://docs.ansible.com/ansible/ufw_module.html</a>),
+the <strong>OpenSSH</strong> protocol:</p>
+<pre>
+- name: Configure Droplet
+  hosts: digital_ocean_droplet
+  remote_user: dropletuser
+  gather_facts: True
+
+  tasks:
+
+    - name: Install Vim package
+      sudo : yes
+      apt:
+        name: vim
+        state: present
+        update_cache: yes
+
+    - name: Install htop
+      sudo : yes
+      apt:
+        name: htop
+        state: present
+        update_cache: yes
+
+    - name: Enable OpenSSH
+      sudo: yes
+      ufw:
+        rule: allow
+        name: OpenSSH
+</pre>
+
+<p>I also installed a couple of packages on my own, vim and htop, which I always use on my servers.</p>
+<p>With this the <strong>playbook</strong> is explained, after running it we can connect as follows:</p>
+<p><code>$ ssh dropletuser@.ippublichere.</code></p>
+<p>If everything went well we should see something like this:</p>
+<pre>
+⇒  ssh dropletuser@.ippublichere.
+Warning: Permanently added 'xxx.xx.xx.xx' (RSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-72-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+10 packages can be updated.
+10 updates are security updates.
+
+
+dropletuser@ubuntu:~$ 
+</pre>
+
+<p>And that's it, I hope this little playbook can help someone, I'll leave the link to <a href="https://github.com/andonirodriguez/ansible_do_create_droplet">Github</a>
+in case you want to take a look.</p>
+<p>Regards.</p>
+                    <p class="post-meta">
+                        Por <strong><a href="/contact/">Andoni</a></strong> el <strong>4 de Mayo de 2017</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://twitter.com/AndoniRodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/andonirodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/andonirodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:andoni.rodriguez@gmail.com">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Andoni Rodríguez 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/clean-blog.min.js"></script>
+
+</body>
+</html>

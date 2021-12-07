@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Andoni Rodriguez Personal Site</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Andoni Rodriguez Personal Site" />
+    <meta name="robots" content="index,follow">
+    <!-- Open Graph Protocol Meta -->
+    <meta property='og:title' content='Andoni Rodriguez - Personal Site' />
+    <meta property='og:url' content='http://www.andonirodriguez.com' />
+    <meta property='og:image' content='http://www.andonirodriguez.com/static/img/home-bg.jpg' />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content='Andoni Rodriguez - Personal Site' />
+    <!-- END Open Graph Protocol Meta -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Andoni Rodriguez - Personal Site" />
+    <meta name="twitter:description" content="Andoni Rodriguez - Personal Site" />
+    <meta name="twitter:url" content="http://www.andonirodriguez.com" />
+    <meta name="twitter:image" content="http://www.andonirodriguez.com/static/img/home-bg.jpg" />
+    <!-- END Twitter Cards -->
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Analytics -->
+    <script src="/static/js/analyticstracking.js"></script>
+
+
+</head>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c797fd4414a2173ba89d1552d/dde80ea88a3aa58c45922e85d.js");</script>
+
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/static/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h2>Andoni Rodríguez</h2>
+                        <hr class="small">
+                        <span class="subheading">Articulos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Andoni Rodríguez</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/posts/">Articulos</a>
+                    </li>
+                    <li>
+                        <a href="/projects/">Proyectos</a>
+                    </li>
+                    <li>
+                        <a href="/contact/">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h1>Ansible Test Playbook</h1>
+                    <hr>
+                    <h2 class="subheading">Useful Playbook to test Amazon EC2 instances</h2>
+                    <p>In my work, I need to turn on and turn off many EC2 on <strong>AWS</strong> (Amazon Web Services) </p>
+<p>Many of these times, I have to turn on an <strong>EC2</strong>, I don't even know how it's going to be configured or I just want to do tests on it.</p>
+<p>Obviously going to the <strong>AWS</strong> panel every time and repeating exactly the same steps is not a viable option.</p>
+<p>We all know <a href="https://www.ansible.com/">Ansible</a>, if not, with this definition taken from GitHub is enough:</p>
+<blockquote>
+<p>Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy.
+Avoid writing scripts or custom code to deploy and update your applications —
+automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.</p>
+</blockquote>
+<p>Each time I have to turn on a basic <strong>EC2</strong>, I run the following playbook:</p>
+<p><code>$ ansible-playbook -i ec2.py create_test_ec2.yml -vv</code></p>
+<p>With the option "<strong>-i ec2.py</strong>" I am telling ansible that I want to run a special hosts file, a script so
+that ansible can find how to connect to the AW2 EC2s by tags.
+<a href="http://docs.ansible.com/ansible/intro_dynamic_inventory.html">Dynamic Inventory</a></p>
+<p>The <strong>create_test_ec2.yml</strong> file, is our playbook, a <strong>YAML</strong> file that is composed of more or less by simple definitions of what we want
+that is our EC2 once raised.</p>
+<p>The option "<strong>-vv</strong>" is to have more verbosity </p>
+<pre>   
+# Test EC2
+---
+- name: Create Instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: Include the variables for Test EC2
+      include_vars: group_vars/test
+
+    - name: Launch EC2 instance for Test EC2
+      ec2:
+        assign_public_ip: yes
+        image: "{{ ec2_image }}"
+        instance_tags:
+           tag_id: "{{ ec2_tag }}"
+           Name: "{{ ec2_name }}"
+        exact_count: "{{ ec2_exact_count }}"
+        count_tag: "{{ ec2_name }}"
+        instance_type: "{{ ec2_instance_type }}"
+        key_name: "{{ ec2_key_name }}"
+        region: "{{ ec2_region }}"
+        vpc_subnet_id: "{{ ec2_vpc_subnet_id}}"
+        group_id: "{{ ec2_group_id }}"
+        wait: yes
+        monitoring: yes
+      register: ec2
+
+    - name: Add new instance to host group
+      sudo: yes
+      add_host: hostname={{ item.private_ip }} groupname=test_ec2
+      with_items: ec2.instances
+      register: add_host
+
+    - name: Associating Elastic IP with the new intance
+      with_items: ec2.instances
+      ec2_eip: instance_id={{ item.id }} ip={{ ec2_elastic_ip }} region={{ ec2_region }}
+
+    - name: Wait for SSH to come up
+      wait_for: host={{ item.private_ip }} port=22 delay=10 timeout=60 state=started
+      with_items: ec2.instances
+
+- name: Playbook for install base system
+  gather_facts: False
+  hosts: test_ec2
+
+  roles:
+    # Basic Roles
+    - time_zone_ubuntu
+    - common_ubuntu
+    - pip_ubuntu
+</pre>
+
+<p>Let me explain what each part of the file does:</p>
+<pre>
+- name: Create Instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+</pre>
+
+<p>I define how the Playbook is called, the hosts it connects to, in this case is localhost, because the connection is done with the <strong>Dynamic Inventory</strong> file.
+I define the gather_facts option as False because I'm not interested in collecting local variables from the system Ansible connects to. Simple.</p>
+<pre>
+  tasks:
+    - name: Include the variables for Test EC2
+      include_vars: group_vars/test
+
+    - name: Launch EC2 instance for Test EC2
+      ec2:
+        assign_public_ip: yes
+        image: "{{ ec2_image }}"
+        instance_tags:
+           tag_id: "{{ ec2_tag }}"
+           Name: "{{ ec2_name }}"
+        exact_count: "{{ ec2_exact_count }}"
+        count_tag: "{{ ec2_name }}"
+        instance_type: "{{ ec2_instance_type }}"
+        key_name: "{{ ec2_key_name }}"
+        region: "{{ ec2_region }}"
+        vpc_subnet_id: "{{ ec2_vpc_subnet_id}}"
+        group_id: "{{ ec2_group_id }}"
+        wait: yes
+        monitoring: yes
+      register: ec2
+
+    - name: Add new instance to host group
+      sudo: yes
+      add_host: hostname={{ item.private_ip }} groupname=test_ec2
+      with_items: ec2.instances
+      register: add_host
+
+    - name: Associating Elastic IP with the new intance
+      with_items: ec2.instances
+      ec2_eip: instance_id={{ item.id }} ip={{ ec2_elastic_ip }} region={{ ec2_region }}
+
+    - name: Wait for SSH to come up
+      wait_for: host={{ item.private_ip }} port=22 delay=10 timeout=60 state=started
+      with_items: ec2.instances
+</pre>
+
+<p>I define the tasks to inject variables to the playbook from an external file and use the <a href="http://docs.ansible.com/ansible/ec2_module.html">Ansible ec2 Module</a> to turn on EC2, 
+then, I collect the private IP for later use and I wait until the SSH service is ready and finally, I assign a public IP.</p>
+<pre>
+- name: Playbook for install base system
+  gather_facts: False
+  hosts: test_ec2
+
+  roles:
+    # Basic Roles
+    - time_zone_ubuntu
+    - common_ubuntu
+    - pip_ubuntu
+</pre>
+
+<p>Finally I connect to the <strong>EC2</strong> That I started and I execute the roles that I consider basic to be able to start to do whatever tests I 
+think are relevant. These put the instance in UTC and they install the packages that I always use (vim, htop, git, etc ...)</p>
+<p>To see what each role does, as well as the structure of the project, you can see the code in <a href="https://github.com/andonirodriguez/ansible_test_template">GitHub</a>.</p>
+<p>Once the tests are finished, we can execute the following playbook that deletes the created instance:</p>
+<p><code>$ ansible-playbook -i ec2.py delete_test_ec2.yml -vv</code></p>
+<p>And this is it, I have omitted from the post things that I consider basic; like: to run the playbooks against <strong>AWS</strong>, you need to have the credentials set up, the ansible roles_path; among other details.</p>
+<p>Regards.</p>
+                    <p class="post-meta">
+                        Por <strong><a href="/contact/">Andoni</a></strong> el <strong>22 de Enero de 2017</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://twitter.com/AndoniRodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/andonirodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/andonirodriguez">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:andoni.rodriguez@gmail.com">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Andoni Rodríguez 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/clean-blog.min.js"></script>
+
+</body>
+</html>
